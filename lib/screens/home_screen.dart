@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isLoading = false;
   List<dynamic>? forecastList;
 
-  // Lógica de colores dinámicos según el clima
+  // Lógica de colores dinámicos según el clima seguro
   List<Color> _getBackgroundColors() {
     if (iconCode == null) return [const Color(0xFF4facfe), const Color(0xFF00f2fe)];
     
