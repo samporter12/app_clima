@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ForecastItem extends StatelessWidget {
-
   final String date;
   final String temperature;
   final String icon;
@@ -16,21 +15,29 @@ class ForecastItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      margin: const EdgeInsets.symmetric(horizontal: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        color: Colors.blue.shade100,
-        borderRadius: BorderRadius.circular(10),
-      ),
+      width: 80, // Un poco más estrecho para que quepan más
+      margin: const EdgeInsets.only(right: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(date),
+          Text(
+            date,
+            style: const TextStyle(color: Colors.white70, fontSize: 14, fontWeight: FontWeight.w500),
+          ),
+          const SizedBox(height: 5),
           Image.network(
             "https://openweathermap.org/img/wn/$icon.png",
+            width: 45,
           ),
-          Text("$temperature °C"),
+          const SizedBox(height: 5),
+          Text(
+            "$temperature°",
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );
